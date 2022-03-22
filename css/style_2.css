@@ -1,0 +1,81 @@
+html {
+	box-sizing: border-box;
+	height: 100%;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	background-color: gray
+}
+
+.selectlist {
+
+}
+
+.selectlist li {
+	flex: auto;
+}
+
+.selectlist a {
+	display: block;
+}
+
+.selectlist img {
+	width: 30vmin;
+	height: 20vmin;
+	object-fit: cover;
+	object-position: top;
+}
+
+.slides {
+	
+}
+
+.slides li {
+	width: 75vmin;
+	height: 100vmin;
+	position: absolute;
+	z-index: 1;
+}
+
+.slides img {
+	height: 100vmin;
+	object-fit: cover;
+	object-position: top;
+}
+
+.slides li:target {
+	z-index: 3;
+	animation: slide 1s 1;
+}
+
+.slides li:not(:target) {
+	z-index: 1;
+	animation: hidden 1s 1;
+}
+
+@keyframes slide {
+	
+	0% {
+		transform: translateY(-100%);
+   }
+	100% {
+		transform: translateY(0%);
+   }
+}
+
+@keyframes hidden {
+	0% {
+		z-index: 2;
+   }
+	100% {
+		z-index: 2;
+   }
+}
